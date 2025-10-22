@@ -3,20 +3,24 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <div className="text-center animate-slide-up">
-        <h1 className="text-8xl md:text-9xl font-bold mb-12 bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent animate-float">
+    <div className="flex min-h-screen items-center justify-center relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-glow" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1s' }} />
+      
+      <div className="text-center animate-slide-up relative z-10">
+        <h1 className="text-8xl md:text-9xl font-bold mb-16 drop-shadow-[0_0_60px_rgba(255,255,255,0.8)] animate-float" style={{ color: '#FFFFFF' }}>
           Renigo
         </h1>
         
         <div className="flex flex-wrap items-center justify-center gap-6 mb-8 px-4">
           <Link to="/home">
-            <Button variant="sapphire" size="nav">
+            <Button variant="emerald" size="nav">
               Home
             </Button>
           </Link>
           <Link to="/about">
-            <Button variant="cyan" size="nav">
+            <Button variant="sapphire" size="nav">
               About Us
             </Button>
           </Link>
@@ -24,7 +28,7 @@ const Index = () => {
 
         <div className="flex flex-wrap items-center justify-center gap-6 px-4">
           <Link to="/projects">
-            <Button variant="navy" size="nav">
+            <Button variant="cyan" size="nav">
               Projects
             </Button>
           </Link>
@@ -34,10 +38,6 @@ const Index = () => {
             </Button>
           </Link>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1s' }} />
       </div>
     </div>
   );
