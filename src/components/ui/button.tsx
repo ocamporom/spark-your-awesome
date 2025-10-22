@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-base font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,12 +15,18 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        emerald: "bg-secondary text-secondary-foreground hover:scale-110 hover:shadow-[0_0_40px_hsl(145,80%,50%/0.5)] transition-all duration-300",
+        sapphire: "bg-primary text-primary-foreground hover:scale-110 hover:shadow-[0_0_40px_hsl(210,100%,55%/0.5)] transition-all duration-300",
+        cyan: "bg-accent text-accent-foreground hover:scale-110 hover:shadow-[0_0_40px_hsl(190,100%,45%/0.5)] transition-all duration-300",
+        navy: "bg-[hsl(210,50%,8%)] text-foreground hover:scale-110 hover:shadow-[0_0_30px_hsl(210,50%,8%/0.8)] transition-all duration-300",
+        light: "bg-foreground text-background hover:scale-110 hover:shadow-[0_0_30px_hsl(210,40%,98%/0.6)] transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        sm: "h-9 rounded-full px-3",
+        lg: "h-14 rounded-full px-10",
         icon: "h-10 w-10",
+        nav: "h-16 px-12 text-xl",
       },
     },
     defaultVariants: {
