@@ -13,22 +13,22 @@ const Index = () => {
           Renigo
         </h1>
         
-        <div className="flex flex-wrap items-center justify-center gap-6 mb-8 px-4">
+        <div className="flex flex-wrap items-center justify-center gap-6 px-4">
+          <Button variant="emerald" size="nav">
+            Navigation
+          </Button>
           <Link to="/home">
-            <Button variant="emerald" size="nav">
+            <Button variant="sapphire" size="nav">
               Home
             </Button>
           </Link>
           <Link to="/about">
-            <Button variant="sapphire" size="nav">
+            <Button variant="cyan" size="nav">
               About Us
             </Button>
           </Link>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-6 px-4">
           <Link to="/projects">
-            <Button variant="cyan" size="nav">
+            <Button variant="navy" size="nav">
               Projects
             </Button>
           </Link>
