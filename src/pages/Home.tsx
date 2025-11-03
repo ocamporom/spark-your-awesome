@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Shield, Rocket } from "lucide-react";
+import { ProfileSelector } from "@/components/ProfileSelector";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
+      {/* Profile Selector Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1s' }} />
+        <ProfileSelector />
+      </section>
+
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-20 animate-slide-up">
