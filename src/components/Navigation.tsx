@@ -9,7 +9,7 @@ const Navigation = () => {
   const isIndexPage = location.pathname === "/";
 
   const navItems = [
-    { label: "Home", path: "/home", variant: "sapphire" as const },
+   { label: "Developers", path: "/home", variant: "sapphire" as const },
     { label: "About Us", path: "/about", variant: "cyan" as const },
     { label: "Projects", path: "/projects", variant: "navy" as const },
     { label: "Contact us", path: "/contact", variant: "light" as const },

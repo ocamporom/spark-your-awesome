@@ -19,7 +19,7 @@ const Index = () => {
           </Button>
           <Link to="/home">
             <Button variant="sapphire" size="nav">
-              Home
+              Developers
             </Button>
           </Link>
           <Link to="/about">
