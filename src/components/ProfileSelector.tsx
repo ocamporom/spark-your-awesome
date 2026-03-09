@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Check, Plus } from "lucide-react";
+import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
+
+import jm from "@/pictures/jm.jpg";
+import rom from "@/pictures/rom.jpg";
 
 interface Profile {
   id: number;
@@ -43,6 +46,7 @@ export const ProfileSelector = () => {
 
   return (
     <div className="min-h-[600px] flex flex-col items-center justify-center gap-12 py-12">
+      
       <div className="text-center">
         <h2 className="text-4xl font-bold text-white mb-2">Select Profile</h2>
         <p className="text-white/70">Choose a profile to continue</p>
@@ -55,8 +59,10 @@ export const ProfileSelector = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {profiles.map((profile, index) => {
+
           const baseOffset = 30;
           const hoveredSpacing = 280;
+
           const translateX = isHovered
             ? (index - 1.5) * hoveredSpacing
             : index * baseOffset;
@@ -75,13 +81,37 @@ export const ProfileSelector = () => {
               }}
             >
               <div className="relative h-full overflow-hidden rounded-lg shadow-2xl">
-                {/* Profile Image Section */}
-                <div className={`h-2/3 ${profile.bgColor} relative flex items-center justify-center`}>
-                  <div className="w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <span className="text-5xl text-white font-bold">
-                      {profile.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
-                    </span>
+
+                {/* Profile Image */}
+                <div
+                  className={`h-2/3 ${profile.bgColor} relative flex items-center justify-center`}
+                >
+                  <div className="w-32 h-32 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm flex items-center justify-center">
+
+                    {profile.name === "John Michael Lagumbay" ? (
+                      <img
+                        src={jm}
+                        alt="John Michael Lagumbay"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : profile.name === "Rom Joses Ocampo" ? (
+                      <img
+                        src={rom}
+                        alt="Rom Joses Ocampo"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-5xl text-white font-bold">
+                        {profile.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)}
+                      </span>
+                    )}
+
                   </div>
+
                   {profile.isActive && (
                     <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg">
                       <Check className="w-6 h-6 text-white" />
@@ -89,30 +119,22 @@ export const ProfileSelector = () => {
                   )}
                 </div>
 
-                {/* Profile Info Section */}
+                {/* Profile Info */}
                 <div className="h-1/3 bg-card p-4 flex flex-col justify-center">
                   <h3 className="font-semibold text-foreground text-center mb-1 line-clamp-2">
                     {profile.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground text-center">{profile.role}</p>
-                  
-                  {/* Logo Placeholder */}
-                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full border-2 border-muted-foreground/30 flex items-center justify-center">
-                    <span className="text-xs text-muted-foreground">Logo</span>
-                  </div>
+
+                  <p className="text-sm text-muted-foreground text-center">
+                    {profile.role}
+                  </p>
                 </div>
+
               </div>
             </Card>
           );
         })}
       </div>
-
-      <button className="flex flex-col items-center gap-3 p-6 border-2 border-dashed border-muted-foreground/30 rounded-lg hover:border-primary/50 transition-all hover:scale-105 cursor-pointer group">
-        <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-          <Plus className="w-6 h-6 text-muted-foreground group-hover:text-primary" />
-        </div>
-        <span className="text-sm font-medium text-foreground">Create new profile</span>
-      </button>
     </div>
   );
 };
